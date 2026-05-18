@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: kahuasuan
+    runtime: python
+    plan: free
+    buildCommand: ""
+    startCommand: python server.py
+    healthCheckPath: /healthz
+    envVars:
+      - key: KHS_ADMIN_TOKEN
+        generateValue: true

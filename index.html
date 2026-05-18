@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>卡划算 - 金融头等舱</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-nav" id="appNav">
+        <button class="icon-button" type="button" data-route="index" aria-label="搜索">
+          <span aria-hidden="true">⌕</span>
+        </button>
+        <div class="brand-mark" data-route="index" role="button" tabindex="0">
+          <strong>卡划算</strong>
+          <span>金融头等舱</span>
+        </div>
+        <button class="icon-button" type="button" data-route="profile" aria-label="我的">
+          <span aria-hidden="true">◎</span>
+        </button>
+      </header>
+
+      <main id="appRoot" aria-live="polite"></main>
+
+      <nav class="bottom-dock" aria-label="主导航">
+        <button class="dock-item active" type="button" data-route="index">
+          <span aria-hidden="true">⌂</span>
+          首页
+        </button>
+        <button class="dock-item" type="button" data-route="cards">
+          <span aria-hidden="true">▣</span>
+          办卡
+        </button>
+        <button class="dock-item" type="button" data-route="loan">
+          <span aria-hidden="true">¥</span>
+          贷款
+        </button>
+        <button class="dock-item" type="button" data-route="profile">
+          <span aria-hidden="true">◉</span>
+          我的
+        </button>
+      </nav>
+    </div>
+
+    <script src="assets/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>卡划算后台</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body class="admin-body">
+    <main class="admin-shell">
+      <section class="admin-hero">
+        <div>
+          <p>Admin Console</p>
+          <h1>卡划算报名后台</h1>
+          <span>查看 C 端用户申办线索和 B 端银行经理报名数据。</span>
+        </div>
+        <a href="./">返回前台</a>
+      </section>
+
+      <form class="admin-login" id="adminLogin">
+        <label>
+          访问口令
+          <input name="token" type="password" autocomplete="current-password" placeholder="输入后台口令" required />
+        </label>
+        <button class="primary-button" type="submit">进入后台</button>
+        <p id="adminStatus">默认本地口令可在 server.py 中修改，或用 KHS_ADMIN_TOKEN 环境变量覆盖。</p>
+      </form>
+
+      <section class="admin-stats" id="adminStats" hidden></section>
+      <section class="admin-table-card" id="consumerTable" hidden></section>
+      <section class="admin-table-card" id="managerTable" hidden></section>
+    </main>
+
+    <script src="assets/admin.js"></script>
+  </body>
+</html>
