@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>卡划算后台</title>
-    <link rel="stylesheet" href="assets/styles.css" />
+    <style>
+      :root{--ink:#0f172a;--muted:#64748b;--blue:#3b82f6;--green:#10b981;--panel:rgba(255,255,255,.92);--tight-shadow:0 10px 28px rgba(15,23,42,.1)}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:#eef4ff;color:var(--ink);font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif}button,input{font:inherit}button{cursor:pointer}.admin-shell{display:grid;gap:16px;width:min(1180px,calc(100% - 32px));margin:0 auto;padding:28px 0 48px}.admin-hero,.admin-login,.admin-stats,.admin-table-card{border:1px solid rgba(148,163,184,.2);border-radius:24px;background:var(--panel);box-shadow:var(--tight-shadow)}.admin-hero{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:26px;background:linear-gradient(135deg,rgba(15,23,42,.94),rgba(30,64,175,.9)),#0f172a;color:#fff}.admin-hero p,.admin-hero h1,.admin-hero span{margin:0}.admin-hero p{color:rgba(255,255,255,.7);font-size:12px;font-weight:850;text-transform:uppercase}.admin-hero h1{margin-top:8px;font-size:34px}.admin-hero span{display:block;margin-top:8px;color:rgba(255,255,255,.76)}.admin-hero a{color:#fff;font-weight:850;text-decoration:none}.admin-login{display:grid;grid-template-columns:minmax(240px,1fr) auto;align-items:end;gap:12px;padding:18px}.admin-login label{display:grid;gap:8px;color:#334155;font-size:13px;font-weight:850}.admin-login input{min-height:46px;border:1px solid rgba(148,163,184,.3);border-radius:14px;padding:0 14px;outline:none}.admin-login p{grid-column:1/-1;margin:0;color:var(--muted);font-size:13px}.primary-button{min-height:46px;border:0;border-radius:14px;padding:0 18px;background:linear-gradient(135deg,var(--blue),var(--green));color:#fff;font-weight:850;box-shadow:0 12px 24px rgba(37,99,235,.24)}.admin-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;overflow:hidden}.admin-stats article{padding:20px;background:#fff}.admin-stats span{display:block;margin-bottom:8px;color:var(--muted);font-size:13px;font-weight:850}.admin-stats strong{font-size:32px}.admin-table-card{overflow:hidden}.admin-table-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 20px;border-bottom:1px solid rgba(148,163,184,.2)}.admin-table-head h2{margin:0;font-size:20px}.admin-table-head span{color:var(--muted);font-size:13px;font-weight:850}.admin-table-wrap{overflow-x:auto}.admin-table{width:100%;min-width:980px;border-collapse:collapse}.admin-table th,.admin-table td{padding:13px 14px;border-bottom:1px solid rgba(148,163,184,.16);text-align:left;vertical-align:top;font-size:13px;line-height:1.45}.admin-table th{background:#f8fafc;color:#475569;font-size:12px;font-weight:900;white-space:nowrap}.admin-table td{color:#334155}@media (max-width:680px){.admin-hero,.admin-login{grid-template-columns:1fr;align-items:stretch}.admin-hero{flex-direction:column;align-items:flex-start}.admin-login .primary-button{width:100%}.admin-stats{grid-template-columns:1fr}}
+    </style>
+    <link rel="stylesheet" href="/assets/styles.css?v=20260519-3" />
   </head>
   <body class="admin-body">
     <main class="admin-shell">
@@ -31,6 +34,6 @@
       <section class="admin-table-card" id="managerTable" hidden></section>
     </main>
 
-    <script src="assets/admin.js"></script>
+    <script src="/assets/admin.js?v=20260519-3"></script>
   </body>
 </html>
