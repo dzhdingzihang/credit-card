@@ -57,7 +57,7 @@ function renderTable(target, title, rows, columns) {
 
 async function loadAdmin(token) {
   statusEl.textContent = "正在读取后台数据...";
-  const response = await fetch(`/api/kahuasuan/admin?token=${encodeURIComponent(token)}`, { cache: "no-store" });
+  const response = await fetch(`/api/kahuasuan/admin/?token=${encodeURIComponent(token)}`, { cache: "no-store" });
   if (!response.ok) throw new Error("口令错误或后台不可访问");
   return response.json();
 }

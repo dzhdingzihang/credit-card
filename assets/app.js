@@ -205,7 +205,7 @@ function consumerPayloadFromProfile(saved, productName) {
 
 async function submitConsumerLead(payload) {
   try {
-    await postJson("/api/kahuasuan/leads", payload);
+    await postJson("/api/kahuasuan/leads/", payload);
     return true;
   } catch {
     const localLeads = JSON.parse(localStorage.getItem("khs_pending_leads") || "[]");
@@ -679,7 +679,7 @@ document.addEventListener("submit", (event) => {
   }
 
   const form = event.target;
-  postJson("/api/kahuasuan/managers", {
+  postJson("/api/kahuasuan/managers/", {
     managerName: form.managerName.value.trim(),
     phone: form.phone.value.trim(),
     bank: form.bank.value,

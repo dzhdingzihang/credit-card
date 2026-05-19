@@ -111,7 +111,7 @@ class Handler(SimpleHTTPRequestHandler):
             self.send_json({"ok": True})
             return
 
-        if parsed.path == "/api/kahuasuan/admin":
+        if parsed.path in ("/api/kahuasuan/admin", "/api/kahuasuan/admin/"):
             token = parse_qs(parsed.query).get("token", [""])[0]
             if token != ADMIN_TOKEN:
                 self.send_json({"error": "unauthorized"}, 401)
@@ -134,15 +134,26 @@ class Handler(SimpleHTTPRequestHandler):
     def do_POST(self):
         parsed = urlparse(self.path)
 
-        if parsed.path == "/api/kahuasuan/leads":
+        if parsed.path in ("/api/kahuasuan/leads", "/api/kahuasuan/leads/"):
             self.send_json({"ok": True, "record": handle_consumer_lead(self.read_json())}, 201)
             return
 
-        if parsed.path == "/api/kahuasuan/managers":
+        if parsed.path in ("/api/kahuasuan/managers", "/api/kahuasuan/managers/"):
             self.send_json({"ok": True, "record": handle_manager_signup(self.read_json())}, 201)
             return
 
         self.send_json({"error": "not found"}, 404)
+
+    def do_HEAD(self):
+        parsed = urlparse(self.path)
+        if parsed.path == "/healthz":
+            body = b""
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            return
+        super().do_HEAD()
 
 
 if __name__ == "__main__":
