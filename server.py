@@ -85,7 +85,13 @@ class Handler(SimpleHTTPRequestHandler):
         return str(ROOT / path)
 
     def end_headers(self):
-        self.send_header("Cache-Control", "no-store")
+        parsed = urlparse(self.path)
+        if parsed.path.startswith("/api/") or parsed.path == "/healthz":
+            self.send_header("Cache-Control", "no-store")
+        elif parsed.path.startswith("/assets/"):
+            self.send_header("Cache-Control", "public, max-age=31536000, immutable")
+        else:
+            self.send_header("Cache-Control", "no-cache, max-age=0, must-revalidate")
         super().end_headers()
 
     def send_json(self, payload, status=200):
